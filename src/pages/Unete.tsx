@@ -25,28 +25,28 @@ import {
 const steps = [
   {
     number: "01",
-    title: "Registra tu Centro",
+    title: "Registra tu centro",
     description:
       "Completa el formulario con los datos de tu asilo o centro de atención. Nuestro equipo se pondrá en contacto contigo.",
     icon: <Building2 className="w-6 h-6" />,
   },
   {
     number: "02",
-    title: "Evaluación y Visita",
+    title: "Evaluación y visita",
     description:
       "Visitamos tu centro para conocer las capacidades, espacios disponibles e intereses de los residentes.",
     icon: <Users className="w-6 h-6" />,
   },
   {
     number: "03",
-    title: "Capacitación Inicial",
+    title: "Capacitación inicial",
     description:
       "Ofrecemos formación en técnicas artesanales adaptadas, manejo de materiales y estándares de calidad.",
     icon: <Palette className="w-6 h-6" />,
   },
   {
     number: "04",
-    title: "Integración a la Red",
+    title: "Integración a la red",
     description:
       "Tu centro comienza a producir y vender a través de nuestra plataforma, recibiendo ingresos directos.",
     icon: <Package className="w-6 h-6" />,
@@ -56,22 +56,22 @@ const steps = [
 const benefits = [
   {
     icon: <Heart className="w-6 h-6" />,
-    title: "Ingresos Dignos",
+    title: "Ingresos dignos",
     description: "Los residentes reciben el 60% del precio de venta, el centro recibe el 20%.",
   },
   {
     icon: <Clock className="w-6 h-6" />,
-    title: "Terapia Ocupacional",
+    title: "Terapia ocupacional",
     description: "Programa estructurado que mejora la salud mental y física de los participantes.",
   },
   {
     icon: <Palette className="w-6 h-6" />,
-    title: "Materiales Incluidos",
+    title: "Materiales incluidos",
     description: "Proporcionamos materiales, herramientas y empaques sin costo inicial.",
   },
   {
     icon: <Users className="w-6 h-6" />,
-    title: "Capacitación Continua",
+    title: "Capacitación continua",
     description: "Talleres mensuales para desarrollar nuevas habilidades y productos.",
   },
   {
@@ -81,7 +81,7 @@ const benefits = [
   },
   {
     icon: <Building2 className="w-6 h-6" />,
-    title: "Comunidad de Apoyo",
+    title: "Comunidad de apoyo",
     description: "Red de más de 42 centros compartiendo experiencias y mejores prácticas.",
   },
 ];
@@ -95,10 +95,10 @@ const requirements = [
 ];
 
 const stats = [
-  { value: "42+", label: "Centros en la Red" },
-  { value: "847", label: "Artesanos Activos" },
-  { value: "94%", label: "Satisfacción de Centros" },
-  { value: "3 meses", label: "Tiempo de Integración" },
+  { value: "42+", label: "Centros en la red" },
+  { value: "847", label: "Artesanos activos" },
+  { value: "94%", label: "Satisfacción de centros" },
+  { value: "3 meses", label: "Tiempo de integración" },
 ];
 
 const Unete = () => {
@@ -133,11 +133,11 @@ const Unete = () => {
             <div className="max-w-3xl mx-auto text-center">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6">
                 <HandHeart className="w-4 h-4" aria-hidden="true" />
-                Únete a la Red Nacional
+                Únete a la Red nacional
               </span>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                Transforma tu Centro en un{" "}
-                <span className="text-primary">Taller de Esperanza</span>
+                Transforma tu centro en un{" "}
+                <span className="text-primary">taller de esperanza</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 ¿Tienes un asilo o centro de atención? Ayuda a tus residentes a
@@ -146,12 +146,12 @@ const Unete = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button variant="hero" size="lg" onClick={scrollToForm}>
-                  Registrar Mi Centro
+                  Registrar mi centro
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </Button>
                 <Button variant="outline" size="lg" onClick={handleScheduleCall}>
                   <Phone className="w-5 h-5" aria-hidden="true" />
-                  Agendar Llamada
+                  Agendar llamada
                 </Button>
               </div>
             </div>
@@ -182,7 +182,7 @@ const Unete = () => {
                 id="process-heading"
                 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4"
               >
-                Proceso de Incorporación
+                Proceso de incorporación
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Un camino claro y acompañado hacia la integración de tu centro a
@@ -232,7 +232,7 @@ const Unete = () => {
                 id="benefits-heading"
                 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4"
               >
-                Beneficios para tu Centro
+                Beneficios para tu centro
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Más que un programa, una transformación integral.
@@ -266,7 +266,7 @@ const Unete = () => {
                   id="requirements-heading"
                   className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6"
                 >
-                  Requisitos para Participar
+                  Requisitos para participar
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8">
                   Buscamos centros comprometidos con el bienestar de sus residentes
@@ -297,7 +297,7 @@ const Unete = () => {
                   </p>
                   <Button variant="outline" className="w-full" onClick={handleScheduleCall}>
                     <Phone className="w-5 h-5" aria-hidden="true" />
-                    Agendar Llamada Exploratoria
+                    Agendar llamada exploratoria
                   </Button>
                 </CardContent>
               </Card>
@@ -318,7 +318,7 @@ const Unete = () => {
                   id="form-heading"
                   className="font-display text-3xl md:text-4xl font-bold mb-4"
                 >
-                  Registra tu Centro
+                  Registra tu centro
                 </h2>
                 <p className="text-lg text-secondary-foreground/80">
                   Completa el formulario y nos pondremos en contacto contigo en
@@ -332,7 +332,7 @@ const Unete = () => {
                     {/* Center Info */}
                     <div className="space-y-4">
                       <h3 className="font-display text-lg font-semibold text-secondary-foreground border-b border-secondary-foreground/20 pb-2">
-                        Información del Centro
+                        Información del centro
                       </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="space-y-2">
@@ -340,7 +340,7 @@ const Unete = () => {
                             htmlFor="centerName"
                             className="text-secondary-foreground"
                           >
-                            Nombre del Centro *
+                            Nombre del centro *
                           </Label>
                           <Input
                             id="centerName"
@@ -354,7 +354,7 @@ const Unete = () => {
                             htmlFor="centerType"
                             className="text-secondary-foreground"
                           >
-                            Tipo de Centro *
+                            Tipo de centro *
                           </Label>
                           <Input
                             id="centerType"
@@ -413,7 +413,7 @@ const Unete = () => {
                     {/* Contact Info */}
                     <div className="space-y-4">
                       <h3 className="font-display text-lg font-semibold text-secondary-foreground border-b border-secondary-foreground/20 pb-2">
-                        Información de Contacto
+                        Información de contacto
                       </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="space-y-2">
@@ -421,7 +421,7 @@ const Unete = () => {
                             htmlFor="contactName"
                             className="text-secondary-foreground"
                           >
-                            Nombre del Contacto *
+                            Nombre del contacto *
                           </Label>
                           <Input
                             id="contactName"
@@ -481,7 +481,7 @@ const Unete = () => {
                     {/* Additional Info */}
                     <div className="space-y-4">
                       <h3 className="font-display text-lg font-semibold text-secondary-foreground border-b border-secondary-foreground/20 pb-2">
-                        Información Adicional
+                        Información adicional
                       </h3>
                       <div className="space-y-2">
                         <Label
@@ -505,7 +505,7 @@ const Unete = () => {
                       size="lg"
                       className="w-full bg-primary-foreground text-secondary hover:bg-primary-foreground/90"
                     >
-                      Enviar Registro
+                      Enviar registro
                       <ArrowRight className="w-5 h-5" aria-hidden="true" />
                     </Button>
 

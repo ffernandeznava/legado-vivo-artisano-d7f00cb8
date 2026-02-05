@@ -47,20 +47,20 @@
  
  const team = [
    {
-     name: "Ana María Rodríguez",
+     name: "Talia Fernández",
      role: "Fundadora y CEO",
-     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop",
+     image: "https://images.unsplash.com/photo-1614786269829-d24616faf56d?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
      bio: "Gerontóloga con 15 años de experiencia en atención a adultos mayores.",
    },
    {
-     name: "Carlos Mendoza",
-     role: "Director de Operaciones",
+     name: "Fernanda Fernández",
+     role: "Directora de operaciones",
      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop",
      bio: "Especialista en cadenas de suministro social y comercio justo.",
    },
    {
-     name: "Patricia Vega",
-     role: "Directora de Impacto Social",
+     name: "Claudia Fernández",
+     role: "Directora de impacto social",
      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop",
      bio: "Trabajadora social con enfoque en programas de terapia ocupacional.",
    },
@@ -76,11 +76,11 @@
            <div className="container mx-auto px-4 lg:px-8 text-center">
              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6">
                <Heart className="w-4 h-4" aria-hidden="true" />
-               Nuestra Historia
+               Nuestra historia
              </span>
              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-               Custodiamos Historias,{" "}
-               <span className="text-primary">Creamos Dignidad</span>
+               Protegiendo un legado{" "}
+               <span className="text-primary">impulsando el futuro</span>
              </h1>
              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                Legado Vivo nació de una pregunta simple: ¿Por qué el talento de nuestros
@@ -96,7 +96,7 @@
              <div className="grid lg:grid-cols-2 gap-12 items-center">
                <div>
                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                   Nuestra Misión
+                   Nuestra misión
                  </h2>
                  <blockquote className="border-l-4 border-primary pl-6 py-4 mb-6">
                    <p className="text-xl text-foreground italic">
@@ -112,7 +112,7 @@
                  </p>
                  <Button variant="hero" size="lg" asChild>
                    <Link to="/impacto">
-                     Ver Nuestro Impacto
+                     Ver nuestro impacto
                      <ArrowRight className="w-5 h-5" aria-hidden="true" />
                    </Link>
                  </Button>
@@ -147,7 +147,7 @@
                  id="values-heading"
                  className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4"
                >
-                 Nuestros Valores
+                 Nuestros valores
                </h2>
                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                  Los principios que guían cada decisión en Legado Vivo.
@@ -179,7 +179,7 @@
                  id="timeline-heading"
                  className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4"
                >
-                 Nuestra Trayectoria
+                 Nuestra trayectoria
                </h2>
              </div>
              <div className="max-w-3xl mx-auto">
@@ -216,7 +216,7 @@
                  id="team-heading"
                  className="font-display text-3xl md:text-4xl font-bold mb-4"
                >
-                 Nuestro Equipo
+                 Nuestro equipo
                </h2>
                <p className="text-lg text-secondary-foreground/80 max-w-2xl mx-auto">
                  Personas apasionadas por generar impacto social.
@@ -256,7 +256,7 @@
                aria-hidden="true"
              />
              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-               ¿Quieres Ser Parte del Cambio?
+               ¿Quieres ser parte del cambio?
              </h2>
              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
                Ya sea comprando, vinculando tu centro o aliándote como empresa,
@@ -265,12 +265,12 @@
              <div className="flex flex-wrap justify-center gap-4">
                <Button variant="hero" size="lg" asChild>
                  <Link to="/tienda">
-                   Explorar Tienda
+                   Explorar tienda
                    <ArrowRight className="w-5 h-5" aria-hidden="true" />
                  </Link>
                </Button>
                <Button variant="forest" size="lg" asChild>
-                 <Link to="/unete">Unir Mi Centro</Link>
+                 <Link to="/unete">Unir mi centro</Link>
                </Button>
              </div>
            </div>

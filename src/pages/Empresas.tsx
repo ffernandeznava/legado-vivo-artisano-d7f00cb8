@@ -28,19 +28,19 @@ const benefits = [
   },
   {
     icon: <Users className="w-8 h-8" />,
-    title: "Impacto ESG Medible",
+    title: "Impacto ESG medible",
     description:
       "Reportes detallados del impacto social generado para tus informes de responsabilidad empresarial y certificaciones.",
   },
   {
     icon: <Building2 className="w-8 h-8" />,
-    title: "Alianzas Estratégicas",
+    title: "Alianzas estratégicas",
     description:
       "Programa de colaboración continua con centros productores y beneficios exclusivos para socios comerciales.",
   },
   {
     icon: <Gift className="w-8 h-8" />,
-    title: "Personalización Total",
+    title: "Personalización total",
     description:
       "Etiquetas de cuero grabadas, packaging de papel semilla, y productos adaptados a tu identidad de marca.",
   },
@@ -55,8 +55,8 @@ const pricingTiers = [
 
 const impactStats = [
   { label: "Empresas Aliadas", value: "47" },
-  { label: "Pedidos Corporativos/Año", value: "380+" },
-  { label: "Impacto Social Generado", value: "$2.3M MXN" },
+  { label: "Pedidos corporativos/año", value: "380+" },
+  { label: "Impacto social generado", value: "$2.3M MXN" },
 ];
 
 const Empresas = () => {
@@ -96,10 +96,10 @@ const Empresas = () => {
               </span>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                 Transforma tu RSE en{" "}
-                <span className="text-primary-foreground/80">Impacto Real</span>
+                <span className="text-primary-foreground/80">Impacto real</span>
               </h1>
               <p className="text-xl text-secondary-foreground/80 mb-8 max-w-2xl">
-                Conecta tu empresa con artesanos mayores y con discapacidad. Ofrece
+                Conecta tu empresa con artesanos mayores o con alguna discapacidad. Ofrece
                 regalos corporativos únicos mientras generas un impacto social
                 verificable y significativo.
               </p>
@@ -110,7 +110,7 @@ const Empresas = () => {
                   className="bg-primary-foreground text-secondary hover:bg-primary-foreground/90"
                   onClick={scrollToForm}
                 >
-                  Solicitar Cotización
+                  Solicitar cotización
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </Button>
                 <Button
@@ -124,7 +124,7 @@ const Empresas = () => {
                     });
                   }}
                 >
-                  Descargar Catálogo B2B
+                  Descargar catálogo B2B
                   <FileText className="w-5 h-5" aria-hidden="true" />
                 </Button>
               </div>
@@ -156,7 +156,7 @@ const Empresas = () => {
                 id="benefits-heading"
                 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4"
               >
-                ¿Por Qué Elegir Legado Vivo?
+                ¿Por qué elegir Legado Vivo?
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Más que un proveedor, somos tu aliado en responsabilidad social
@@ -194,7 +194,7 @@ const Empresas = () => {
                 id="pricing-heading"
                 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4"
               >
-                Precios por Volumen Automatizados
+                Precios por volumen automatizados
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 A mayor cantidad, mayor descuento y mayor impacto social.
@@ -241,13 +241,13 @@ const Empresas = () => {
               <div>
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6">
                   <Sparkles className="w-4 h-4" aria-hidden="true" />
-                  Simulador de Producto
+                  Simulador de producto
                 </span>
                 <h2
                   id="simulator-heading"
                   className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6"
                 >
-                  Visualiza tu Logo en Nuestros Productos
+                  Visualiza tu logo en nuestros productos
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8">
                   Nuestra herramienta de simulación te permite previsualizar cómo
@@ -271,7 +271,7 @@ const Empresas = () => {
                   ))}
                 </ul>
                 <Button variant="hero" size="lg" onClick={scrollToSimulator}>
-                  Abrir Simulador
+                  Abrir simulador
                   <Upload className="w-5 h-5" aria-hidden="true" />
                 </Button>
               </div>
@@ -315,7 +315,7 @@ const Empresas = () => {
                   id="contact-heading"
                   className="font-display text-3xl md:text-4xl font-bold mb-6"
                 >
-                  Solicita tu Cotización Empresarial
+                  Solicita tu cotización empresarial
                 </h2>
                 <p className="text-lg text-secondary-foreground/80 mb-8">
                   Cuéntanos sobre tu proyecto y te prepararemos una propuesta
@@ -389,7 +389,7 @@ const Empresas = () => {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="message" className="text-secondary-foreground">
-                        Detalles del Proyecto
+                        Detalles del proyecto
                       </Label>
                       <Textarea
                         id="message"
@@ -404,7 +404,7 @@ const Empresas = () => {
                       size="lg"
                       className="w-full bg-primary-foreground text-secondary hover:bg-primary-foreground/90"
                     >
-                      Enviar Solicitud
+                      Enviar solicitud
                       <ArrowRight className="w-5 h-5" aria-hidden="true" />
                     </Button>
                   </form>

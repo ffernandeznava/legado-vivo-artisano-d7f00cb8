@@ -14,15 +14,15 @@ interface ImpactStat {
 const impactStats: ImpactStat[] = [
   {
     id: "artisans",
-    label: "Artesanos Empoderados",
+    label: "Artesanos empoderados",
     value: 847,
     suffix: "+",
     icon: <Users className="w-8 h-8" aria-hidden="true" />,
-    description: "Personas mayores y con discapacidad generando ingresos dignos",
+    description: "Personas mayores o con alguna discapacidad generando ingresos dignos",
   },
   {
     id: "centers",
-    label: "Centros Vinculados",
+    label: "Centros vinculados",
     value: 42,
     suffix: "",
     icon: <Building2 className="w-8 h-8" aria-hidden="true" />,
@@ -30,7 +30,7 @@ const impactStats: ImpactStat[] = [
   },
   {
     id: "therapy",
-    label: "Horas de Terapia Ocupacional",
+    label: "Horas de terapia ocupacional",
     value: 12450,
     suffix: "+",
     icon: <Clock className="w-8 h-8" aria-hidden="true" />,
@@ -151,13 +151,13 @@ export function ImpactDashboard() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-4">
-            Nuestro Impacto en Tiempo Real
+            Nuestro impacto en tiempo real
           </span>
           <h2
             id="impact-heading"
             className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4"
           >
-            Transformando Vidas, Una Artesanía a la Vez
+            Transformando vidas, una artesanía a la vez
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Cada compra activa una red de dignidad que conecta hogares con talleres de esperanza.

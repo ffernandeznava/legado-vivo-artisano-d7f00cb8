@@ -21,122 +21,102 @@ interface Product {
 const allProducts: Product[] = [
   {
     id: "1",
-    name: "Mermelada de Higo Artesanal",
+    name: "Mermelada de higo artesanal",
     category: "Línea Gourmet",
     price: 185,
     artisan: "Don Manuel, 78 años",
-    center: "Casa del Abuelo Feliz, Oaxaca",
-    image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=400&fit=crop",
+    center: "Casa del abuelo feliz, Oaxaca",
+    image: "src/assets/mermelada.png",
     description: "Elaborada con higos frescos de temporada y el toque secreto de décadas de experiencia.",
   },
   {
     id: "2",
-    name: "Vela de Cera de Abeja",
-    category: "Hogar y Bienestar",
+    name: "Vela de cera de abeja",
+    category: "Hogar y bienestar",
     price: 145,
     artisan: "María Elena, 82 años",
     center: "Hogar San José, Querétaro",
-    image: "https://images.unsplash.com/photo-1602607666592-6f5a9a2d8d74?w=400&h=400&fit=crop",
+    image: "src/assets/vela.png",
     description: "Vela 100% natural con aroma suave, perfecta para crear ambientes de paz.",
   },
   {
     id: "3",
-    name: "Bolsa de Cuero Tejido",
+    name: "Bolsa de cuero tejido",
     category: "Cultural/Tradicional",
     price: 890,
-    artisan: "Grupo Artesanal Esperanza",
-    center: "CADI Luz y Vida, CDMX",
-    image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&h=400&fit=crop",
+    artisan: "Grupo Esperanza",
+    center: "CADI Luz y vida, CDMX",
+    image: "src/assets/bolsa.png",
     description: "Bolsa tejida a mano con técnicas tradicionales heredadas por generaciones.",
   },
   {
     id: "4",
-    name: "Jabón de Lavanda Natural",
-    category: "Hogar y Bienestar",
+    name: "Jabón de lavanda natural",
+    category: "Hogar y bienestar",
     price: 95,
     artisan: "Doña Lupita, 75 años",
     center: "Asilo Santa María, Guadalajara",
-    image: "https://images.unsplash.com/photo-1600857062241-98e5dba7f214?w=400&h=400&fit=crop",
+    image: "src/assets/jabon.png",
     description: "Jabón artesanal con aceites esenciales de lavanda orgánica.",
   },
   {
     id: "5",
-    name: "Miel de Abeja Silvestre",
+    name: "Miel de abeja silvestre",
     category: "Línea Gourmet",
     price: 220,
     artisan: "Don Roberto, 80 años",
-    center: "Hogar de Ancianos Esperanza, Yucatán",
-    image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&h=400&fit=crop",
+    center: "Hogar de ancianos Esperanza, Yucatán",
+    image: "src/assets/miel.png",
     description: "Miel pura recolectada de apiarios tradicionales mayas.",
   },
   {
-    id: "6",
-    name: "Servilletas Bordadas a Mano",
-    category: "Cultural/Tradicional",
-    price: 350,
-    artisan: "Las Bordadoras de Luz",
-    center: "Centro Vida Plena, Chiapas",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
-    description: "Set de 4 servilletas con bordados tradicionales de la región.",
-  },
-  {
     id: "7",
-    name: "Aceite de Oliva Infusionado",
+    name: "Aceite de oliva infusionado",
     category: "Línea Gourmet",
     price: 275,
     artisan: "Don Aurelio, 76 años",
     center: "Asilo San Francisco, Baja California",
-    image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&h=400&fit=crop",
+    image: "src/assets/aceite.png",
     description: "Aceite extra virgen infusionado con hierbas del jardín del centro.",
   },
   {
-    id: "8",
-    name: "Cojín de Telar de Cintura",
-    category: "Hogar y Bienestar",
-    price: 580,
-    artisan: "Doña Carmela, 79 años",
-    center: "Casa Hogar Amanecer, Oaxaca",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=400&fit=crop",
-    description: "Cojín decorativo tejido en telar de cintura con diseños zapotecos.",
-  },
-  {
     id: "9",
-    name: "Café de Altura Tostado",
+    name: "Café de altura tostado",
     category: "Línea Gourmet",
     price: 195,
-    artisan: "Grupo Cafetero Sabiduría",
-    center: "Hogar Tercera Edad, Veracruz",
-    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&h=400&fit=crop",
+    artisan: "Grupo cafetero Sabiduría",
+    center: "Hogar Tercera edad, Veracruz",
+    image: "src/assets/cafe.png",
     description: "Café de altura tostado artesanalmente con notas de chocolate.",
   },
   {
     id: "10",
-    name: "Maceta de Barro Pintado",
+    name: "Maceta de barro pintado",
     category: "Cultural/Tradicional",
     price: 320,
     artisan: "Don Jesús, 83 años",
-    center: "Centro Geriátrico Felicidad, Michoacán",
-    image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400&h=400&fit=crop",
+    center: "Centro geriátrico Felicidad, Michoacán",
+    image: "src/assets/maceta.png",
     description: "Maceta decorativa con diseños tradicionales purépechas.",
   },
   {
     id: "11",
-    name: "Sales de Baño Aromáticas",
-    category: "Hogar y Bienestar",
+    name: "Sales de baño aromáticas",
+    category: "Hogar y bienestar",
     price: 125,
     artisan: "Doña Teresa, 77 años",
-    center: "Asilo Nuestra Señora, Puebla",
-    image: "https://images.unsplash.com/photo-1570194065650-d99fb4bedf0a?w=400&h=400&fit=crop",
+    center: "Asilo Nuestra señora, Puebla",
+    image: "src/assets/sales.png",
     description: "Sales minerales con mezcla de hierbas relajantes.",
   },
   {
     id: "12",
-    name: "Licor de Membrillo",
+    name: "Licor de membrillo",
     category: "Línea Gourmet",
     price: 380,
     artisan: "Don Fernando, 81 años",
     center: "Hogar San Vicente, Aguascalientes",
-    image: "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=400&h=400&fit=crop",
+    image: "src/assets/licor.png",
     description: "Licor artesanal elaborado con la receta familiar del artesano.",
   },
 ];
@@ -144,7 +124,7 @@ const allProducts: Product[] = [
 const categories = [
   { id: "all", name: "Todos", count: 12 },
   { id: "gourmet", name: "Línea Gourmet", count: 5 },
-  { id: "hogar", name: "Hogar y Bienestar", count: 4 },
+  { id: "hogar", name: "Hogar y bienestar", count: 4 },
   { id: "cultural", name: "Cultural/Tradicional", count: 3 },
 ];
 
@@ -222,7 +202,7 @@ function ProductCard({ product }: { product: Product }) {
       </CardContent>
       <CardFooter className="p-5 pt-0 flex gap-2">
         <Button variant="default" className="flex-1" size="sm" onClick={handleAddToCart}>
-          Agregar al Carrito
+          Agregar al carrito
         </Button>
         <Button
           variant="ghost"
@@ -245,7 +225,7 @@ const Tienda = () => {
     const matchesCategory =
       selectedCategory === "all" ||
       (selectedCategory === "gourmet" && product.category === "Línea Gourmet") ||
-      (selectedCategory === "hogar" && product.category === "Hogar y Bienestar") ||
+      (selectedCategory === "hogar" && product.category === "Hogar y bienestar") ||
       (selectedCategory === "cultural" && product.category === "Cultural/Tradicional");
 
     const matchesSearch =
@@ -264,7 +244,7 @@ const Tienda = () => {
         <section className="bg-gradient-to-br from-sand-light to-cream py-16">
           <div className="container mx-auto px-4 lg:px-8 text-center">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Tienda Artesanal
+              Tienda artesanal
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               Cada producto cuenta una historia de superación, dignidad y maestría.
@@ -332,7 +312,7 @@ const Tienda = () => {
                   {/* Price Range Info */}
                   <div className="mt-8 p-4 rounded-xl bg-secondary/10 border border-secondary/20">
                     <h3 className="font-display font-semibold text-foreground mb-2">
-                      Rango de Precios
+                      Rango de precios
                     </h3>
                     <p className="text-sm text-muted-foreground">
                       Desde $95 hasta $890 MXN

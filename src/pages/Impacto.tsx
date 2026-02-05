@@ -19,43 +19,43 @@ const impactMetrics = [
   {
     icon: <Users className="w-8 h-8" />,
     value: "847",
-    label: "Artesanos Empoderados",
-    description: "Personas mayores y con discapacidad generando ingresos dignos",
+    label: "Artesanos empoderados",
+    description: "Personas mayores o con alguna discapacidad generando ingresos dignos",
     trend: "+23% este año",
   },
   {
     icon: <Building2 className="w-8 h-8" />,
     value: "42",
-    label: "Centros Vinculados",
+    label: "Centros vinculados",
     description: "Asilos y centros de atención en todo México",
     trend: "+8 nuevos centros",
   },
   {
     icon: <Clock className="w-8 h-8" />,
     value: "12,450",
-    label: "Horas de Terapia",
+    label: "Horas de terapia",
     description: "Terapia ocupacional significativa generada",
     trend: "+34% vs año anterior",
   },
   {
     icon: <Heart className="w-8 h-8" />,
     value: "$4.2M",
-    label: "Ingresos Generados",
+    label: "Ingresos generados",
     description: "Pesos mexicanos distribuidos a artesanos y centros",
     trend: "+45% crecimiento",
   },
 ];
 
 const mapLocations = [
-  { id: 1, state: "Oaxaca", centers: 6, specialty: "Textiles y Barro Negro", x: "38%", y: "72%" },
-  { id: 2, state: "CDMX", centers: 8, specialty: "Artículos de Cuero", x: "42%", y: "58%" },
-  { id: 3, state: "Jalisco", centers: 5, specialty: "Productos Gourmet", x: "30%", y: "52%" },
-  { id: 4, state: "Yucatán", centers: 4, specialty: "Miel y Bordados", x: "68%", y: "55%" },
-  { id: 5, state: "Michoacán", centers: 5, specialty: "Cerámica y Madera", x: "32%", y: "58%" },
-  { id: 6, state: "Chiapas", centers: 3, specialty: "Café y Textiles", x: "48%", y: "78%" },
-  { id: 7, state: "Querétaro", centers: 4, specialty: "Velas y Jabones", x: "40%", y: "50%" },
-  { id: 8, state: "Puebla", centers: 4, specialty: "Talavera y Conservas", x: "46%", y: "62%" },
-  { id: 9, state: "Veracruz", centers: 3, specialty: "Café y Vainilla", x: "52%", y: "56%" },
+  { id: 1, state: "Oaxaca", centers: 6, specialty: "Textiles y barro negro", x: "38%", y: "72%" },
+  { id: 2, state: "CDMX", centers: 8, specialty: "Artículos de cuero", x: "42%", y: "58%" },
+  { id: 3, state: "Jalisco", centers: 5, specialty: "Productos gourmet", x: "30%", y: "52%" },
+  { id: 4, state: "Yucatán", centers: 4, specialty: "Miel y mordados", x: "68%", y: "55%" },
+  { id: 5, state: "Michoacán", centers: 5, specialty: "Cerámica y madera", x: "32%", y: "58%" },
+  { id: 6, state: "Chiapas", centers: 3, specialty: "Café y textiles", x: "48%", y: "78%" },
+  { id: 7, state: "Querétaro", centers: 4, specialty: "Velas y jabones", x: "40%", y: "50%" },
+  { id: 8, state: "Puebla", centers: 4, specialty: "Talavera y conservas", x: "46%", y: "62%" },
+  { id: 9, state: "Veracruz", centers: 3, specialty: "Café y vainilla", x: "52%", y: "56%" },
 ];
 
 const testimonials = [
@@ -102,10 +102,10 @@ const Impacto = () => {
           <div className="container mx-auto px-4 lg:px-8 text-center">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6">
               <TrendingUp className="w-4 h-4" aria-hidden="true" />
-              Impacto Social Verificable
+              Impacto social verificable
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Transformando Vidas a Través del Trabajo Digno
+              Transformando vidas a través del trabajo digno
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Cada producto que vendes, cada compra que realizas, genera un impacto
@@ -157,7 +157,7 @@ const Impacto = () => {
                 id="map-heading"
                 className="font-display text-3xl md:text-4xl font-bold mb-4"
               >
-                Mapa de Impacto Nacional
+                Mapa de impacto nacional
               </h2>
               <p className="text-lg text-secondary-foreground/80 max-w-2xl mx-auto">
                 Explora nuestra red de centros productores en todo México.
@@ -220,7 +220,7 @@ const Impacto = () => {
               {/* Centers List */}
               <div className="space-y-4">
                 <h3 className="font-display text-xl font-semibold mb-4">
-                  Centros por Estado
+                  Centros por estado
                 </h3>
                 <ul className="space-y-3" role="list">
                   {mapLocations.map((location) => (
@@ -255,7 +255,7 @@ const Impacto = () => {
                 id="testimonials-heading"
                 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4"
               >
-                Voces de Nuestros Artesanos
+                Voces de nuestros artesanos
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Las historias de quienes dan vida a cada producto.
@@ -306,7 +306,7 @@ const Impacto = () => {
                 id="growth-heading"
                 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4"
               >
-                Nuestro Crecimiento
+                Nuestro crecimiento
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Un camino de expansión constante del impacto social.
@@ -361,7 +361,7 @@ const Impacto = () => {
                 aria-hidden="true"
               />
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Sé Parte del Cambio
+                Sé parte del cambio
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Cada compra, cada mensaje, cada alianza suma a esta red de dignidad
@@ -370,13 +370,13 @@ const Impacto = () => {
               <div className="flex flex-wrap justify-center gap-4">
                 <Button variant="hero" size="lg" asChild>
                   <Link to="/tienda">
-                  Explorar Tienda
+                  Explorar tienda
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />
                   </Link>
                 </Button>
                 <Button variant="forest" size="lg" asChild>
                   <Link to="/unete">
-                  Unir Mi Centro
+                  Unir mi centro
                   <Building2 className="w-5 h-5" aria-hidden="true" />
                   </Link>
                 </Button>

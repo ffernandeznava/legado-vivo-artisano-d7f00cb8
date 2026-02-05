@@ -6,17 +6,17 @@ import { ArrowRight, CheckCircle2, Heart, Building2, HandHeart } from "lucide-re
 const steps = [
   {
     number: "01",
-    title: "Registra tu Centro",
+    title: "Registra tu centro",
     description: "Completa el formulario con los datos de tu asilo o centro de atención.",
   },
   {
     number: "02",
-    title: "Evaluación y Capacitación",
+    title: "Evaluación y capacitación",
     description: "Nuestro equipo evalúa las capacidades y ofrece formación en producción artesanal.",
   },
   {
     number: "03",
-    title: "Integración a la Red",
+    title: "Integración a la red",
     description: "Tu centro comienza a producir y vender a través de nuestra plataforma.",
   },
 ];
@@ -41,13 +41,13 @@ export function JoinNetworkSection() {
         <div className="text-center mb-16">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6">
             <HandHeart className="w-4 h-4" aria-hidden="true" />
-            Únete a la Red Nacional
+            Únete a la Red nacional
           </span>
           <h2
             id="join-heading"
             className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4"
           >
-            ¿Tienes un Asilo o Centro de Atención?
+            ¿Tienes un asilo o centro de atención?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Transforma tu espacio en un taller de esperanza. Ayuda a tus residentes a generar ingresos dignos mientras participan en terapia ocupacional significativa.
@@ -58,7 +58,7 @@ export function JoinNetworkSection() {
           {/* Process Steps */}
           <div>
             <h3 className="font-display text-2xl font-bold text-foreground mb-8">
-              Proceso de Incorporación
+              Proceso de incorporación
             </h3>
             <div className="space-y-8">
               {steps.map((step, index) => (
@@ -86,7 +86,7 @@ export function JoinNetworkSection() {
             <div className="mt-10">
               <Button variant="hero" size="lg" asChild>
                 <Link to="/unete">
-                Registrar Mi Centro
+                Registrar mi centro
                 <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </Link>
               </Button>
@@ -101,7 +101,7 @@ export function JoinNetworkSection() {
                   <Building2 className="w-6 h-6 text-secondary" aria-hidden="true" />
                 </div>
                 <h3 className="font-display text-xl font-bold text-foreground">
-                  Beneficios para tu Centro
+                  Beneficios para tu centro
                 </h3>
               </div>
 

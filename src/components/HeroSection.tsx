@@ -29,7 +29,7 @@ export function HeroSection() {
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse-gentle" aria-hidden="true" />
             <span className="text-sm font-medium text-primary">
-              Artesanía con Propósito Social test
+              Productos artesanales con un enfoque social
             </span>
           </div>
 
@@ -39,8 +39,8 @@ export function HeroSection() {
             className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 opacity-0 animate-fade-up"
             style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
           >
-            Custodiamos Historias,{" "}
-            <span className="text-primary">Creamos Dignidad</span>
+            Protegemos un legado{" "}
+            <span className="text-primary">impulsando el futuro</span>
           </h1>
 
           {/* Manifesto */}
@@ -67,7 +67,7 @@ export function HeroSection() {
           >
             <Button variant="hero" size="lg" aria-label="Explorar catálogo de productos" asChild>
               <Link to="/tienda">
-              Explorar Catálogo
+              Explorar catálogo
               <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </Link>
             </Button>
@@ -79,7 +79,7 @@ export function HeroSection() {
             >
               <Link to="/impacto">
               <Play className="w-5 h-5" aria-hidden="true" />
-              Conoce a Nuestros Artesanos
+              Conoce a nuestros artesanos
               </Link>
             </Button>
           </div>
@@ -93,7 +93,7 @@ export function HeroSection() {
               <span className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center text-secondary">
                 ✓
               </span>
-              <span className="text-sm">Comercio Justo Certificado</span>
+              <span className="text-sm">Comercio justo certificado</span>
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
               <span className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center text-secondary">
@@ -105,7 +105,7 @@ export function HeroSection() {
               <span className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center text-secondary">
                 ✓
               </span>
-              <span className="text-sm">Impacto Social Verificable</span>
+              <span className="text-sm">Impacto social verificable</span>
             </div>
           </div>
         </div>

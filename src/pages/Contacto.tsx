@@ -141,7 +141,7 @@
                  <Card variant="elevated">
                    <CardContent className="p-8">
                      <h2 className="font-display text-2xl font-bold text-foreground mb-6">
-                       Envíanos un Mensaje
+                       Envíanos un mensaje
                      </h2>
                      <form onSubmit={handleSubmit} className="space-y-6">
                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -197,7 +197,7 @@
                          />
                        </div>
                        <Button type="submit" variant="hero" size="lg" className="w-full">
-                         Enviar Mensaje
+                         Enviar mensaje
                          <Send className="w-5 h-5" aria-hidden="true" />
                        </Button>
                      </form>
@@ -212,7 +212,7 @@
                      <div className="flex items-center gap-3 mb-4">
                        <Clock className="w-6 h-6 text-primary" aria-hidden="true" />
                        <h3 className="font-display text-lg font-semibold text-foreground">
-                         Horario de Atención
+                         Horario de atención
                        </h3>
                      </div>
                      <div className="space-y-2 text-muted-foreground">

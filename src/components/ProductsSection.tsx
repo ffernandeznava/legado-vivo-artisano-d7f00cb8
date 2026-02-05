@@ -17,39 +17,39 @@ interface Product {
 const featuredProducts: Product[] = [
   {
     id: "1",
-    name: "Mermelada de Higo Artesanal",
+    name: "Mermelada de higo artesanal",
     category: "Línea Gourmet",
     price: 185,
     artisan: "Don Manuel, 78 años",
-    center: "Casa del Abuelo Feliz, Oaxaca",
-    image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=400&fit=crop",
+    center: "Casa del abuelo feliz, Oaxaca",
+    image: "src/assets/mermelada.png",
   },
   {
     id: "2",
-    name: "Vela de Cera de Abeja",
-    category: "Hogar y Bienestar",
+    name: "Vela de cera de abeja",
+    category: "Hogar y bienestar",
     price: 145,
     artisan: "María Elena, 82 años",
     center: "Hogar San José, Querétaro",
-    image: "https://images.unsplash.com/photo-1602607666592-6f5a9a2d8d74?w=400&h=400&fit=crop",
+    image: "src/assets/vela.png",
   },
   {
     id: "3",
-    name: "Bolsa de Cuero Tejido",
+    name: "Bolsa de cuero tejido",
     category: "Cultural/Tradicional",
     price: 890,
-    artisan: "Grupo Artesanal Esperanza",
-    center: "CADI Luz y Vida, CDMX",
-    image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=400&h=400&fit=crop",
+    artisan: "Grupo Esperanza",
+    center: "CADI Luz y vida, CDMX",
+    image: "src/assets/bolsa.png",
   },
   {
     id: "4",
-    name: "Jabón de Lavanda Natural",
-    category: "Hogar y Bienestar",
+    name: "Jabón de lavanda natural",
+    category: "Hogar y bienestar",
     price: 95,
     artisan: "Doña Lupita, 75 años",
     center: "Asilo Santa María, Guadalajara",
-    image: "https://images.unsplash.com/photo-1600857062241-98e5dba7f214?w=400&h=400&fit=crop",
+    image: "src/assets/jabon.png",
   },
 ];
 
@@ -62,7 +62,7 @@ const categories = [
   },
   {
     id: "hogar",
-    name: "Hogar y Bienestar",
+    name: "Hogar y bienestar",
     description: "Velas, jabones, textiles y productos para el hogar",
     color: "bg-forest/10 text-forest border-forest/20",
   },
@@ -145,7 +145,7 @@ function ProductCard({ product }: { product: Product }) {
       </CardContent>
       <CardFooter className="p-5 pt-0 flex gap-2">
         <Button variant="default" className="flex-1" size="sm" onClick={handleAddToCart}>
-          Agregar al Carrito
+          Agregar al carrito
         </Button>
         <Button
           variant="ghost"
@@ -170,13 +170,13 @@ export function ProductsSection() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-2 rounded-full bg-secondary/10 text-secondary font-medium text-sm mb-4">
-            Tienda Artesanal
+            Tienda artesanal
           </span>
           <h2
             id="products-heading"
             className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4"
           >
-            Productos con Historia y Propósito
+            Productos con historia y propósito
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Cada artículo cuenta una historia de superación. Explora nuestras categorías y encuentra piezas únicas.
@@ -219,7 +219,7 @@ export function ProductsSection() {
         <div className="text-center mt-12">
           <Button variant="forest" size="lg" asChild>
             <Link to="/tienda">
-            Ver Todo el Catálogo
+            Ver todo el catálogo
             <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </Link>
           </Button>

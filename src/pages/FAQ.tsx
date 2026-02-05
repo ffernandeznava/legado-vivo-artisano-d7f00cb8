@@ -141,10 +141,10 @@
            <div className="container mx-auto px-4 lg:px-8 text-center">
              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6">
                <HelpCircle className="w-4 h-4" aria-hidden="true" />
-               Centro de Ayuda
+               Centro de ayuda
              </span>
              <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-               Preguntas Frecuentes
+               Preguntas frecuentes
              </h1>
              <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
                Encuentra respuestas rápidas a las preguntas más comunes sobre
@@ -254,7 +254,7 @@
                asChild
              >
                <Link to="/contacto">
-                 Contactar Soporte
+                 Contactar soporte
                  <ArrowRight className="w-5 h-5" aria-hidden="true" />
                </Link>
              </Button>

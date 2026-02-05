@@ -4,18 +4,18 @@ import { Heart, Mail, Phone, MapPin, Facebook, Instagram, Youtube } from "lucide
 const footerLinks = {
   tienda: [
     { label: "Línea Gourmet", href: "/tienda?categoria=gourmet" },
-    { label: "Hogar y Bienestar", href: "/tienda?categoria=hogar" },
+    { label: "Hogar y bienestar", href: "/tienda?categoria=hogar" },
     { label: "Cultural/Tradicional", href: "/tienda?categoria=cultural" },
-    { label: "Ver Todo", href: "/tienda" },
+    { label: "Ver todo", href: "/tienda" },
   ],
   empresa: [
-    { label: "Nuestra Historia", href: "/nosotros" },
-    { label: "Impacto Social", href: "/impacto" },
-    { label: "Únete a la Red", href: "/unete" },
-    { label: "Para Empresas", href: "/empresas" },
+    { label: "Nuestra historia", href: "/nosotros" },
+    { label: "Impacto social", href: "/impacto" },
+    { label: "Únete a la red", href: "/unete" },
+    { label: "Para empresas", href: "/empresas" },
   ],
   ayuda: [
-    { label: "Preguntas Frecuentes", href: "/faq" },
+    { label: "Preguntas frecuentes", href: "/faq" },
     { label: "Contacto", href: "/contacto" },
   ],
 };
