@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
+ import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-artisan.jpg";
 
 export function HeroSection() {
@@ -64,17 +65,22 @@ export function HeroSection() {
             className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-up"
             style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}
           >
-            <Button variant="hero" size="lg" aria-label="Explorar catálogo de productos">
+            <Button variant="hero" size="lg" aria-label="Explorar catálogo de productos" asChild>
+              <Link to="/tienda">
               Explorar Catálogo
               <ArrowRight className="w-5 h-5" aria-hidden="true" />
+              </Link>
             </Button>
             <Button
               variant="terracottaOutline"
               size="lg"
               aria-label="Ver video sobre nuestros artesanos"
+              asChild
             >
+              <Link to="/impacto">
               <Play className="w-5 h-5" aria-hidden="true" />
               Conoce a Nuestros Artesanos
+              </Link>
             </Button>
           </div>
 

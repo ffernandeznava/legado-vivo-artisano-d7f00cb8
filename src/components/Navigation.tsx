@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Heart, ShoppingBag } from "lucide-react";
+ import { useToast } from "@/hooks/use-toast";
 
 const navLinks = [
   { href: "/", label: "Inicio", ariaLabel: "Ir a la página de inicio" },
@@ -15,6 +16,14 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+   const { toast } = useToast();
+ 
+   const handleCartClick = () => {
+     toast({
+       title: "Carrito de compras",
+       description: "Próximamente podrás gestionar tu carrito aquí.",
+     });
+   };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -89,11 +98,13 @@ export function Navigation() {
               </ul>
 
               <div className="flex items-center gap-3">
-                <Button variant="ghost" size="icon" aria-label="Ver carrito de compras">
+                <Button variant="ghost" size="icon" aria-label="Ver carrito de compras" onClick={handleCartClick}>
                   <ShoppingBag className="w-5 h-5" aria-hidden="true" />
                 </Button>
-                <Button variant="default" size="sm">
+                <Button variant="default" size="sm" asChild>
+                  <Link to="/tienda">
                   Comprar Ahora
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -145,8 +156,11 @@ export function Navigation() {
                   variant="default"
                   className="w-full"
                   tabIndex={isOpen ? 0 : -1}
+                  asChild
                 >
+                  <Link to="/tienda">
                   Comprar Ahora
+                  </Link>
                 </Button>
               </li>
             </ul>

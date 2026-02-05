@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Building2, Package, Users, ArrowRight, CheckCircle2 } from "lucide-react";
+ import { Link } from "react-router-dom";
 
 const benefits = [
   {
@@ -72,13 +73,11 @@ export function B2BSection() {
               ))}
             </div>
 
-            <Button
-              variant="hero"
-              size="lg"
-              className="bg-primary-foreground text-secondary hover:bg-primary-foreground/90"
-            >
+            <Button variant="hero" size="lg" className="bg-primary-foreground text-secondary hover:bg-primary-foreground/90" asChild>
+              <Link to="/empresas">
               Solicitar Cotización Empresarial
               <ArrowRight className="w-5 h-5" aria-hidden="true" />
+              </Link>
             </Button>
           </div>
 
@@ -110,12 +109,10 @@ export function B2BSection() {
                 <p className="font-display text-lg font-semibold text-secondary-foreground">
                   Sube tu logo y visualiza cómo quedará en nuestros productos artesanales
                 </p>
-                <Button
-                  variant="terracottaOutline"
-                  className="mt-4 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-secondary"
-                  size="sm"
-                >
+                <Button variant="terracottaOutline" className="mt-4 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-secondary" size="sm" asChild>
+                  <Link to="/empresas#simulador">
                   Probar Simulador
+                  </Link>
                 </Button>
               </div>
             </CardContent>
