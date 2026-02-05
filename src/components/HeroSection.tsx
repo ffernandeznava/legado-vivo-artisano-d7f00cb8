@@ -29,7 +29,7 @@ export function HeroSection() {
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse-gentle" aria-hidden="true" />
             <span className="text-sm font-medium text-primary">
-              Artesanía con Propósito Social
+              Artesanía con Propósito Social test
             </span>
           </div>
 
