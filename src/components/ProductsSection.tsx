@@ -1,6 +1,8 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, MessageCircle } from "lucide-react";
+ import { Link } from "react-router-dom";
+ import { useToast } from "@/hooks/use-toast";
 
 interface Product {
   id: string;
@@ -73,6 +75,29 @@ const categories = [
 ];
 
 function ProductCard({ product }: { product: Product }) {
+   const { toast } = useToast();
+ 
+   const handleAddToCart = () => {
+     toast({
+       title: "Producto añadido",
+       description: `${product.name} se agregó al carrito.`,
+     });
+   };
+ 
+   const handleFavorite = () => {
+     toast({
+       title: "Añadido a favoritos",
+       description: `${product.name} se agregó a tus favoritos.`,
+     });
+   };
+ 
+   const handleMessage = () => {
+     toast({
+       title: "¡Gracias por tu interés!",
+       description: "Próximamente podrás enviar mensajes directos al centro.",
+     });
+   };
+ 
   return (
     <Card
       variant="product"
@@ -93,6 +118,7 @@ function ProductCard({ product }: { product: Product }) {
           </span>
         </div>
         <button
+          onClick={handleFavorite}
           className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-primary-foreground focus-visible:opacity-100"
           aria-label={`Agregar ${product.name} a favoritos`}
         >
@@ -118,13 +144,14 @@ function ProductCard({ product }: { product: Product }) {
         </p>
       </CardContent>
       <CardFooter className="p-5 pt-0 flex gap-2">
-        <Button variant="default" className="flex-1" size="sm">
+        <Button variant="default" className="flex-1" size="sm" onClick={handleAddToCart}>
           Agregar al Carrito
         </Button>
         <Button
           variant="ghost"
           size="icon"
           aria-label={`Enviar mensaje de agradecimiento al centro ${product.center}`}
+          onClick={handleMessage}
         >
           <MessageCircle className="w-5 h-5" aria-hidden="true" />
         </Button>
@@ -163,7 +190,8 @@ export function ProductsSection() {
           aria-label="Categorías de productos"
         >
           {categories.map((category) => (
-            <button
+            <Link
+              to={`/tienda?categoria=${category.id}`}
               key={category.id}
               className={`p-6 rounded-xl border-2 text-left transition-all hover:shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${category.color}`}
               aria-label={`Ver categoría ${category.name}`}
@@ -172,7 +200,7 @@ export function ProductsSection() {
                 {category.name}
               </h3>
               <p className="text-sm opacity-80">{category.description}</p>
-            </button>
+            </Link>
           ))}
         </div>
 
@@ -189,9 +217,11 @@ export function ProductsSection() {
 
         {/* View All CTA */}
         <div className="text-center mt-12">
-          <Button variant="forest" size="lg">
+          <Button variant="forest" size="lg" asChild>
+            <Link to="/tienda">
             Ver Todo el Catálogo
             <ArrowRight className="w-5 h-5" aria-hidden="true" />
+            </Link>
           </Button>
         </div>
       </div>

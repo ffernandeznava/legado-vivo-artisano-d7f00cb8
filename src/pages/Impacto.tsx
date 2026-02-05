@@ -13,6 +13,7 @@ import {
   ArrowRight,
   Quote,
 } from "lucide-react";
+ import { Link } from "react-router-dom";
 
 const impactMetrics = [
   {
@@ -367,13 +368,17 @@ const Impacto = () => {
                 y esperanza.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button variant="hero" size="lg">
+                <Button variant="hero" size="lg" asChild>
+                  <Link to="/tienda">
                   Explorar Tienda
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />
+                  </Link>
                 </Button>
-                <Button variant="forest" size="lg">
+                <Button variant="forest" size="lg" asChild>
+                  <Link to="/unete">
                   Unir Mi Centro
                   <Building2 className="w-5 h-5" aria-hidden="true" />
+                  </Link>
                 </Button>
               </div>
             </div>

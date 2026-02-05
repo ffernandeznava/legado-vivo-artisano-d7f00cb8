@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle2, Heart, Building2, HandHeart } from "lucide-react";
+ import { Link } from "react-router-dom";
 
 const steps = [
   {
@@ -83,9 +84,11 @@ export function JoinNetworkSection() {
             </div>
 
             <div className="mt-10">
-              <Button variant="hero" size="lg">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/unete">
                 Registrar Mi Centro
                 <ArrowRight className="w-5 h-5" aria-hidden="true" />
+                </Link>
               </Button>
             </div>
           </div>

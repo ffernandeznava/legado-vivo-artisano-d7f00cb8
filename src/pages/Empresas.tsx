@@ -17,6 +17,7 @@ import {
   Upload,
   Sparkles,
 } from "lucide-react";
+ import { useToast } from "@/hooks/use-toast";
 
 const benefits = [
   {
@@ -59,6 +60,24 @@ const impactStats = [
 ];
 
 const Empresas = () => {
+   const { toast } = useToast();
+ 
+   const handleSubmit = (e: React.FormEvent) => {
+     e.preventDefault();
+     toast({
+       title: "¡Solicitud enviada!",
+       description: "Nos pondremos en contacto contigo en menos de 24 horas.",
+     });
+   };
+ 
+   const scrollToForm = () => {
+     document.getElementById("cotizacion-form")?.scrollIntoView({ behavior: "smooth" });
+   };
+ 
+   const scrollToSimulator = () => {
+     document.getElementById("simulador")?.scrollIntoView({ behavior: "smooth" });
+   };
+ 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -89,6 +108,7 @@ const Empresas = () => {
                   variant="hero"
                   size="lg"
                   className="bg-primary-foreground text-secondary hover:bg-primary-foreground/90"
+                  onClick={scrollToForm}
                 >
                   Solicitar Cotización
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />
@@ -97,6 +117,12 @@ const Empresas = () => {
                   variant="outline"
                   size="lg"
                   className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                  onClick={() => {
+                    toast({
+                      title: "Descarga en proceso",
+                      description: "El catálogo B2B estará disponible próximamente.",
+                    });
+                  }}
                 >
                   Descargar Catálogo B2B
                   <FileText className="w-5 h-5" aria-hidden="true" />
@@ -209,7 +235,7 @@ const Empresas = () => {
         </section>
 
         {/* Product Simulator Teaser */}
-        <section className="py-20" aria-labelledby="simulator-heading">
+        <section id="simulador" className="py-20" aria-labelledby="simulator-heading">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -244,7 +270,7 @@ const Empresas = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant="hero" size="lg">
+                <Button variant="hero" size="lg" onClick={scrollToSimulator}>
                   Abrir Simulador
                   <Upload className="w-5 h-5" aria-hidden="true" />
                 </Button>
@@ -278,7 +304,7 @@ const Empresas = () => {
         </section>
 
         {/* Contact Form */}
-        <section
+        <section id="cotizacion-form"
           className="py-20 bg-secondary text-secondary-foreground"
           aria-labelledby="contact-heading"
         >
@@ -314,7 +340,7 @@ const Empresas = () => {
               </div>
               <Card className="bg-secondary-foreground/10 border-secondary-foreground/20">
                 <CardContent className="p-8">
-                  <form className="space-y-6" aria-label="Formulario de cotización">
+                  <form className="space-y-6" aria-label="Formulario de cotización" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="company" className="text-secondary-foreground">

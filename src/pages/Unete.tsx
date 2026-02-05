@@ -19,6 +19,8 @@ import {
   Clock,
   Heart,
 } from "lucide-react";
+ import { Link } from "react-router-dom";
+ import { useToast } from "@/hooks/use-toast";
 
 const steps = [
   {
@@ -100,6 +102,27 @@ const stats = [
 ];
 
 const Unete = () => {
+   const { toast } = useToast();
+ 
+   const handleSubmit = (e: React.FormEvent) => {
+     e.preventDefault();
+     toast({
+       title: "¡Registro enviado!",
+       description: "Nos pondremos en contacto contigo en menos de 48 horas.",
+     });
+   };
+ 
+   const scrollToForm = () => {
+     document.getElementById("registro-form")?.scrollIntoView({ behavior: "smooth" });
+   };
+ 
+   const handleScheduleCall = () => {
+     toast({
+       title: "Agendar llamada",
+       description: "Próximamente habilitaremos el sistema de agendamiento.",
+     });
+   };
+ 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -122,11 +145,11 @@ const Unete = () => {
                 significativa a través de la producción artesanal.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button variant="hero" size="lg">
+                <Button variant="hero" size="lg" onClick={scrollToForm}>
                   Registrar Mi Centro
                   <ArrowRight className="w-5 h-5" aria-hidden="true" />
                 </Button>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" onClick={handleScheduleCall}>
                   <Phone className="w-5 h-5" aria-hidden="true" />
                   Agendar Llamada
                 </Button>
@@ -272,7 +295,7 @@ const Unete = () => {
                     programa. Agenda una llamada exploratoria y evaluemos juntos las
                     posibilidades.
                   </p>
-                  <Button variant="outline" className="w-full">
+                  <Button variant="outline" className="w-full" onClick={handleScheduleCall}>
                     <Phone className="w-5 h-5" aria-hidden="true" />
                     Agendar Llamada Exploratoria
                   </Button>
@@ -284,6 +307,7 @@ const Unete = () => {
 
         {/* Registration Form */}
         <section
+          id="registro-form"
           className="py-20 bg-secondary text-secondary-foreground"
           aria-labelledby="form-heading"
         >
@@ -304,7 +328,7 @@ const Unete = () => {
 
               <Card className="bg-secondary-foreground/10 border-secondary-foreground/20">
                 <CardContent className="p-8">
-                  <form className="space-y-6" aria-label="Formulario de registro">
+                  <form className="space-y-6" aria-label="Formulario de registro" onSubmit={handleSubmit}>
                     {/* Center Info */}
                     <div className="space-y-4">
                       <h3 className="font-display text-lg font-semibold text-secondary-foreground border-b border-secondary-foreground/20 pb-2">
