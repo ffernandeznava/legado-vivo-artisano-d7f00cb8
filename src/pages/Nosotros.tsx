@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Heart, Users, Target, Sparkles, ArrowRight, Award } from "lucide-react";
 
 import taliaImg from "@/assets/team/talia.jpg";
-import fernandaImg from "@/assets/team/fernanda.jpg";
+import fernandaImg from "@/assets/team/fernanda.jpeg";
 import claudiaImg from "@/assets/team/claudia.jpg";
 
 const values = [
@@ -41,14 +41,14 @@ const team = [
     alt: "Talia Fernández, fundadora y CEO de Legado Vivo, mujer ejecutiva sosteniendo documentos con expresión profesional y cálida"
   },
   { 
-    name: "Fernanda Martínez", 
+    name: "Fernanda Fernández", 
     role: "Directora de operaciones", 
     image: fernandaImg, 
     bio: "Especialista en cadenas de suministro social y comercio justo.",
     alt: "Fernanda Martínez, directora de operaciones, mujer profesional con sonrisa confiada en ambiente de oficina"
   },
   { 
-    name: "Claudia Ramírez", 
+    name: "Claudia Fernández", 
     role: "Directora de impacto social", 
     image: claudiaImg, 
     bio: "Trabajadora social con enfoque en programas de terapia ocupacional.",

@@ -58,7 +58,6 @@ const mapLocations = [
   { id: 6, state: "Chiapas", centers: 3, specialty: "Café de altura y textiles", x: 540, y: 420 },
   { id: 7, state: "Querétaro", centers: 4, specialty: "Velas aromáticas y jabones", x: 400, y: 290 },
   { id: 8, state: "Puebla", centers: 4, specialty: "Talavera poblana y conservas", x: 460, y: 350 },
-  { id: 9, state: "Veracruz", centers: 3, specialty: "Café y vainilla artesanal", x: 520, y: 340 },
 ];
 
 const testimonials = [

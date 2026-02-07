@@ -127,3 +127,4 @@ export function MexicoMap({ locations, onLocationClick, activeLocationId }: Mexi
     </div>
   );
 }
+

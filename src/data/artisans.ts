@@ -16,15 +16,15 @@ export interface Artisan {
 export const artisans: Artisan[] = [
   {
     id: "1",
-    name: "Don Manuel García",
+    name: "Manuel García",
     age: 78,
     center: "Casa del abuelo feliz",
     state: "Oaxaca",
     specialty: "Conservas y mermeladas",
     yearsOfExperience: 45,
     bio: "Maestro conservero con más de 4 décadas de experiencia en la elaboración de mermeladas artesanales.",
-    story: "Don Manuel comenzó a elaborar conservas junto a su madre cuando tenía apenas 8 años. Durante 40 años trabajó en una pequeña fábrica de conservas en Oaxaca, donde perfeccionó su técnica. Cuando la fábrica cerró, pensó que sus días productivos habían terminado. Pero al llegar a Casa del abuelo feliz, encontró un nuevo propósito: enseñar a otros residentes el arte de las conservas y crear productos que llegan a hogares de todo México. 'Cada frasco que sale de aquí lleva mi corazón', dice Don Manuel mientras revisa el punto exacto de sus mermeladas de higo.",
-    image: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=400&h=400&fit=crop",
+    story: "Manuel comenzó a elaborar conservas junto a su madre cuando tenía apenas 8 años. Durante 40 años trabajó en una pequeña fábrica de conservas en Oaxaca, donde perfeccionó su técnica. Cuando la fábrica cerró, pensó que sus días productivos habían terminado. Pero al llegar a Casa del abuelo feliz, encontró un nuevo propósito: enseñar a otros residentes el arte de las conservas y crear productos que llegan a hogares de todo México. 'Cada frasco que sale de aquí lleva mi corazón', dice Manuel mientras revisa el punto exacto de sus mermeladas de higo.",
+    image: "https://www.psicoactiva.com/wp-content/uploads/2019/05/anciano-japones.jpg",
     productsCount: 3,
     joinedYear: 2021,
   },
