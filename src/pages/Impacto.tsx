@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -13,32 +14,33 @@ import {
   ArrowRight,
   Quote,
 } from "lucide-react";
- import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { MexicoMap } from "@/components/MexicoMap";
 
 const impactMetrics = [
   {
-    icon: <Users className="w-8 h-8" />,
+    icon: <Users className="w-8 h-8" aria-hidden="true" />,
     value: "847",
     label: "Artesanos empoderados",
     description: "Personas mayores o con alguna discapacidad generando ingresos dignos",
     trend: "+23% este año",
   },
   {
-    icon: <Building2 className="w-8 h-8" />,
+    icon: <Building2 className="w-8 h-8" aria-hidden="true" />,
     value: "42",
     label: "Centros vinculados",
     description: "Asilos y centros de atención en todo México",
     trend: "+8 nuevos centros",
   },
   {
-    icon: <Clock className="w-8 h-8" />,
+    icon: <Clock className="w-8 h-8" aria-hidden="true" />,
     value: "12,450",
     label: "Horas de terapia",
     description: "Terapia ocupacional significativa generada",
     trend: "+34% vs año anterior",
   },
   {
-    icon: <Heart className="w-8 h-8" />,
+    icon: <Heart className="w-8 h-8" aria-hidden="true" />,
     value: "$4.2M",
     label: "Ingresos generados",
     description: "Pesos mexicanos distribuidos a artesanos y centros",
@@ -46,16 +48,17 @@ const impactMetrics = [
   },
 ];
 
+// Real approximate coordinates for Mexican states on 800x500 viewBox
 const mapLocations = [
-  { id: 1, state: "Oaxaca", centers: 6, specialty: "Textiles y barro negro", x: "38%", y: "72%" },
-  { id: 2, state: "CDMX", centers: 8, specialty: "Artículos de cuero", x: "42%", y: "58%" },
-  { id: 3, state: "Jalisco", centers: 5, specialty: "Productos gourmet", x: "30%", y: "52%" },
-  { id: 4, state: "Yucatán", centers: 4, specialty: "Miel y mordados", x: "68%", y: "55%" },
-  { id: 5, state: "Michoacán", centers: 5, specialty: "Cerámica y madera", x: "32%", y: "58%" },
-  { id: 6, state: "Chiapas", centers: 3, specialty: "Café y textiles", x: "48%", y: "78%" },
-  { id: 7, state: "Querétaro", centers: 4, specialty: "Velas y jabones", x: "40%", y: "50%" },
-  { id: 8, state: "Puebla", centers: 4, specialty: "Talavera y conservas", x: "46%", y: "62%" },
-  { id: 9, state: "Veracruz", centers: 3, specialty: "Café y vainilla", x: "52%", y: "56%" },
+  { id: 1, state: "Oaxaca", centers: 6, specialty: "Textiles tradicionales y barro negro", x: 480, y: 400 },
+  { id: 2, state: "CDMX", centers: 8, specialty: "Artículos de cuero artesanal", x: 420, y: 340 },
+  { id: 3, state: "Jalisco", centers: 5, specialty: "Productos gourmet y cerámica", x: 320, y: 300 },
+  { id: 4, state: "Yucatán", centers: 4, specialty: "Miel de abeja y bordados", x: 700, y: 300 },
+  { id: 5, state: "Michoacán", centers: 5, specialty: "Cerámica de Talavera y lacas", x: 360, y: 340 },
+  { id: 6, state: "Chiapas", centers: 3, specialty: "Café de altura y textiles", x: 540, y: 420 },
+  { id: 7, state: "Querétaro", centers: 4, specialty: "Velas aromáticas y jabones", x: 400, y: 290 },
+  { id: 8, state: "Puebla", centers: 4, specialty: "Talavera poblana y conservas", x: 460, y: 350 },
+  { id: 9, state: "Veracruz", centers: 3, specialty: "Café y vainilla artesanal", x: 520, y: 340 },
 ];
 
 const testimonials = [
@@ -66,6 +69,7 @@ const testimonials = [
     age: 75,
     center: "Asilo Santa María, Guadalajara",
     image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop",
+    alt: "Retrato de Doña Lupita, artesana de jabones de 75 años, sonriendo cálidamente",
   },
   {
     quote:
@@ -74,6 +78,7 @@ const testimonials = [
     age: 82,
     center: "Hogar San José, Querétaro",
     image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=100&h=100&fit=crop",
+    alt: "Retrato de María Elena, tejedora de 82 años con expresión serena y sabia",
   },
   {
     quote:
@@ -82,6 +87,7 @@ const testimonials = [
     age: 68,
     center: "CADI Luz y Vida, CDMX",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+    alt: "Retrato de Roberto, artesano de velas de 68 años con discapacidad visual",
   },
 ];
 
@@ -93,6 +99,13 @@ const yearlyProgress = [
 ];
 
 const Impacto = () => {
+  const [activeLocation, setActiveLocation] = useState<number | null>(null);
+
+  // Split locations into two columns
+  const midpoint = Math.ceil(mapLocations.length / 2);
+  const leftColumnLocations = mapLocations.slice(0, midpoint);
+  const rightColumnLocations = mapLocations.slice(midpoint);
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -100,8 +113,8 @@ const Impacto = () => {
         {/* Hero */}
         <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-sand-light">
           <div className="container mx-auto px-4 lg:px-8 text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6">
-              <TrendingUp className="w-4 h-4" aria-hidden="true" />
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-base mb-6">
+              <TrendingUp className="w-5 h-5" aria-hidden="true" />
               Impacto social verificable
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -133,10 +146,10 @@ const Impacto = () => {
                     <p className="font-display text-lg font-semibold text-foreground mb-2">
                       {metric.label}
                     </p>
-                    <p className="text-sm text-muted-foreground mb-4">
+                    <p className="text-base text-muted-foreground mb-4">
                       {metric.description}
                     </p>
-                    <span className="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-sm font-medium">
+                    <span className="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-base font-medium">
                       {metric.trend}
                     </span>
                   </CardContent>
@@ -160,88 +173,101 @@ const Impacto = () => {
                 Mapa de impacto nacional
               </h2>
               <p className="text-lg text-secondary-foreground/80 max-w-2xl mx-auto">
-                Explora nuestra red de centros productores en todo México.
+                Explora nuestra red de centros productores en todo México. Haz clic en cada punto para más detalles.
               </p>
             </div>
 
             <div className="grid lg:grid-cols-3 gap-8 items-start">
-              {/* Map Placeholder */}
-              <div className="lg:col-span-2">
-                <div className="relative aspect-[4/3] bg-secondary-foreground/10 rounded-2xl overflow-hidden border border-secondary-foreground/20">
-                  {/* Simplified Mexico map outline */}
-                  <svg
-                    viewBox="0 0 100 80"
-                    className="w-full h-full"
-                    aria-label="Mapa de México con centros marcados"
-                  >
-                    <path
-                      d="M10,25 Q15,20 25,22 L35,18 Q45,15 55,20 L70,15 Q80,18 85,25 L88,35 Q90,45 85,55 L75,65 Q65,70 55,68 L45,72 Q35,75 25,70 L15,60 Q8,50 10,40 Z"
-                      fill="hsl(var(--secondary-foreground) / 0.1)"
-                      stroke="hsl(var(--primary-foreground) / 0.3)"
-                      strokeWidth="0.5"
-                    />
-                    {mapLocations.map((location) => (
-                      <g key={location.id}>
-                        <circle
-                          cx={location.x}
-                          cy={location.y}
-                          r="2.5"
-                          fill="hsl(var(--primary))"
-                          className="animate-pulse"
-                        />
-                        <circle
-                          cx={location.x}
-                          cy={location.y}
-                          r="4"
-                          fill="hsl(var(--primary) / 0.3)"
-                        />
-                      </g>
-                    ))}
-                  </svg>
-
-                  {/* Location markers overlay */}
-                  {mapLocations.map((location) => (
-                    <button
-                      key={location.id}
-                      className="absolute w-4 h-4 -translate-x-1/2 -translate-y-1/2 group"
-                      style={{ left: location.x, top: location.y }}
-                      aria-label={`${location.state}: ${location.centers} centros, especialidad ${location.specialty}`}
-                    >
-                      <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-background text-foreground rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity shadow-elevated pointer-events-none">
-                        <span className="font-semibold">{location.state}</span>
-                        <br />
-                        {location.centers} centros · {location.specialty}
-                      </span>
-                    </button>
-                  ))}
-                </div>
+              {/* Real Mexico Map */}
+              <div className="lg:col-span-2 bg-secondary-foreground/5 rounded-2xl p-6 border border-secondary-foreground/10">
+                <MexicoMap 
+                  locations={mapLocations} 
+                  onLocationClick={(loc) => setActiveLocation(loc.id === activeLocation ? null : loc.id)}
+                  activeLocationId={activeLocation}
+                />
               </div>
 
-              {/* Centers List */}
-              <div className="space-y-4">
-                <h3 className="font-display text-xl font-semibold mb-4">
+              {/* Centers List - Two Columns */}
+              <div>
+                <h3 className="font-display text-xl font-semibold mb-6">
                   Centros por estado
                 </h3>
-                <ul className="space-y-3" role="list">
-                  {mapLocations.map((location) => (
-                    <li key={location.id}>
-                      <button className="w-full text-left p-4 rounded-xl bg-secondary-foreground/10 hover:bg-secondary-foreground/20 transition-colors border border-secondary-foreground/10">
+                <div className="grid grid-cols-2 gap-3" role="list" aria-label="Lista de centros artesanales por estado">
+                  {/* Left Column */}
+                  <div className="space-y-3">
+                    {leftColumnLocations.map((location) => (
+                      <button
+                        key={location.id}
+                        onClick={() => setActiveLocation(location.id === activeLocation ? null : location.id)}
+                        className={`w-full text-left p-4 rounded-xl transition-all border focus:outline-none focus-visible:ring-4 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+                          activeLocation === location.id
+                            ? "bg-primary text-primary-foreground border-primary"
+                            : "bg-secondary-foreground/10 border-secondary-foreground/10 hover:bg-secondary-foreground/20"
+                        }`}
+                        aria-pressed={activeLocation === location.id}
+                        aria-label={`${location.state}: ${location.centers} centros especializados en ${location.specialty}`}
+                      >
                         <div className="flex items-center justify-between mb-1">
-                          <span className="font-semibold flex items-center gap-2">
+                          <span className="font-semibold flex items-center gap-2 text-base">
                             <MapPin className="w-4 h-4" aria-hidden="true" />
                             {location.state}
                           </span>
-                          <span className="text-sm bg-primary-foreground/20 px-2 py-0.5 rounded-full">
-                            {location.centers} centros
+                          <span className={`text-sm px-2 py-0.5 rounded-full ${
+                            activeLocation === location.id 
+                              ? "bg-primary-foreground/20" 
+                              : "bg-primary/20 text-primary"
+                          }`}>
+                            {location.centers}
                           </span>
                         </div>
-                        <p className="text-sm text-secondary-foreground/70">
+                        <p className={`text-sm ${
+                          activeLocation === location.id 
+                            ? "text-primary-foreground/80" 
+                            : "text-secondary-foreground/70"
+                        }`}>
                           {location.specialty}
                         </p>
                       </button>
-                    </li>
-                  ))}
-                </ul>
+                    ))}
+                  </div>
+                  {/* Right Column */}
+                  <div className="space-y-3">
+                    {rightColumnLocations.map((location) => (
+                      <button
+                        key={location.id}
+                        onClick={() => setActiveLocation(location.id === activeLocation ? null : location.id)}
+                        className={`w-full text-left p-4 rounded-xl transition-all border focus:outline-none focus-visible:ring-4 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+                          activeLocation === location.id
+                            ? "bg-primary text-primary-foreground border-primary"
+                            : "bg-secondary-foreground/10 border-secondary-foreground/10 hover:bg-secondary-foreground/20"
+                        }`}
+                        aria-pressed={activeLocation === location.id}
+                        aria-label={`${location.state}: ${location.centers} centros especializados en ${location.specialty}`}
+                      >
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="font-semibold flex items-center gap-2 text-base">
+                            <MapPin className="w-4 h-4" aria-hidden="true" />
+                            {location.state}
+                          </span>
+                          <span className={`text-sm px-2 py-0.5 rounded-full ${
+                            activeLocation === location.id 
+                              ? "bg-primary-foreground/20" 
+                              : "bg-primary/20 text-primary"
+                          }`}>
+                            {location.centers}
+                          </span>
+                        </div>
+                        <p className={`text-sm ${
+                          activeLocation === location.id 
+                            ? "text-primary-foreground/80" 
+                            : "text-secondary-foreground/70"
+                        }`}>
+                          {location.specialty}
+                        </p>
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -276,14 +302,15 @@ const Impacto = () => {
                     <div className="flex items-center gap-4">
                       <img
                         src={testimonial.image}
-                        alt={testimonial.author}
+                        alt={testimonial.alt}
                         className="w-14 h-14 rounded-full object-cover"
+                        loading="lazy"
                       />
                       <div>
                         <p className="font-display font-semibold text-foreground">
                           {testimonial.author}, {testimonial.age} años
                         </p>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-base text-muted-foreground">
                           {testimonial.center}
                         </p>
                       </div>
@@ -325,7 +352,7 @@ const Impacto = () => {
                     <p className="font-display text-5xl font-bold text-primary mb-4">
                       {year.year}
                     </p>
-                    <div className="space-y-3 text-sm">
+                    <div className="space-y-3 text-base">
                       <div className="flex justify-between">
                         <span className="text-muted-foreground">Artesanos</span>
                         <span className="font-semibold text-foreground">
@@ -370,14 +397,14 @@ const Impacto = () => {
               <div className="flex flex-wrap justify-center gap-4">
                 <Button variant="hero" size="lg" asChild>
                   <Link to="/tienda">
-                  Explorar tienda
-                  <ArrowRight className="w-5 h-5" aria-hidden="true" />
+                    Explorar tienda
+                    <ArrowRight className="w-5 h-5" aria-hidden="true" />
                   </Link>
                 </Button>
                 <Button variant="forest" size="lg" asChild>
                   <Link to="/unete">
-                  Unir mi centro
-                  <Building2 className="w-5 h-5" aria-hidden="true" />
+                    Unir mi centro
+                    <Building2 className="w-5 h-5" aria-hidden="true" />
                   </Link>
                 </Button>
               </div>
