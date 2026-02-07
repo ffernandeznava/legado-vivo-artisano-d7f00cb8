@@ -4,6 +4,12 @@ import { ArrowRight, Heart, MessageCircle } from "lucide-react";
  import { Link } from "react-router-dom";
  import { useToast } from "@/hooks/use-toast";
 
+ import mermeladaIgm from "@/assets/products/mermelada.jpg";
+ import velaIgm from "@/assets/products/vela.jpg";
+ import bolsaIgm from "@/assets/products/bolsa.jpg";
+ import jabonIgm from "@/assets/products/jabon.jpg";
+
+
 interface Product {
   id: string;
   name: string;
@@ -21,8 +27,8 @@ const featuredProducts: Product[] = [
     category: "Línea Gourmet",
     price: 185,
     artisan: "Manuel, 78 años",
-    center: "Casa del abuelo feliz, Oaxaca",
-    image: "../src/assets/mermelada.png",
+    center: "Casa del abuelo feliz, Oaxaca",   
+    image: mermeladaIgm, 
   },
   {
     id: "2",
@@ -31,7 +37,7 @@ const featuredProducts: Product[] = [
     price: 145,
     artisan: "María Elena, 82 años",
     center: "Hogar San José, Querétaro",
-    image: "../src/assets/vela.png",
+    image: velaIgm,
   },
   {
     id: "3",
@@ -40,7 +46,7 @@ const featuredProducts: Product[] = [
     price: 890,
     artisan: "Grupo Esperanza",
     center: "CADI Luz y vida, CDMX",
-    image: "../src/assets/bolsa.png",
+    image: bolsaIgm,
   },
   {
     id: "4",
@@ -49,7 +55,7 @@ const featuredProducts: Product[] = [
     price: 95,
     artisan: "Lupita, 75 años",
     center: "Asilo Santa María, Guadalajara",
-    image: "../src/assets/jabon.png",
+    image: jabonIgm,
   },
 ];
 
